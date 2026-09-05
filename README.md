@@ -63,3 +63,10 @@ if (motorSpeed > 0) {
         myStepper.step(2);  // Road clear: forward drive
     }
 }
+🛠 Tech Stack
+Languages: C++ (Embedded)
+Frameworks: Arduino Core / PlatformIO / VS Code
+Hardware: Arduino Uno R3, ESP32-PICO (M5StickC Plus), 28BYJ-48 Stepper, SG90 Servo, HC-SR04 Sonar, ULN2003.
+Protocols & Drivers: Hardware PWM, Software UART, ADC Sampling, Microsecond Pulse Timing, Multi-tasking without delay().
+📄 License
+MIT
