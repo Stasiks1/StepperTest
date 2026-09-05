@@ -46,10 +46,11 @@ pinMode(13, INPUT);
 }
 
 void loop() {
-    if (millis() - lastSonarTime >= 60) {
-        lastSonarTime = millis();
-        currentDistance = getDistanceCm();
-        Serial.write((uint8_t)constrain(currentDistance, 0, 255));
+    if (millis() - lastSonarTime >= 100) {
+    lastSonarTime = millis();
+    currentDistance = getDistanceCm();
+    stickLink.write((uint8_t)constrain(currentDistance, 0, 255));
+
     Serial.print("Distance: ");
     Serial.print(currentDistance);
     Serial.println(" cm");
