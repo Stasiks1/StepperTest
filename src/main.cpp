@@ -43,6 +43,8 @@ stickLink.begin(9600);
 
 pinMode(12, OUTPUT);
 pinMode(13, INPUT);
+
+pinMode(7, OUTPUT);
 }
 
 void loop() {
@@ -79,11 +81,13 @@ if (stickLink.available() > 0) {
 
         if (isReverse == true){
             myStepper.step(-2); 
+            digitalWrite(7, HIGH);
         } else if (currentDistance > 0 && currentDistance < 15){
                 Serial.println("EMERGENCY STOP: OBSTACLE DETECTED");
                 myStepper.step(0);
         } else {
             myStepper.step(2);
+            digitalWrite(7, LOW);
             }  
         }
     }
